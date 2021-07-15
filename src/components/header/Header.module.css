@@ -1,0 +1,18 @@
+.title{
+  color: #fff;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+
+.menu{
+  background-color: yellowgreen;
+  display: flex;
+  padding: 10px;
+}
+
+.menu_link{
+  margin: 0 20px 0 0;
+  
+}
