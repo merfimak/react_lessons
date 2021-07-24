@@ -14,5 +14,8 @@
 
 .menu_link{
   margin: 0 20px 0 0;
-  
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
 }
+

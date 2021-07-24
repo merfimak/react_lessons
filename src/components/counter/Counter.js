@@ -1,7 +1,7 @@
 
 import classes from './counter.module.css';
 import React, {useState, useEffect} from 'react';
-
+import { connect } from 'react-redux';
 
 const Counter = (props) => {
 
@@ -25,8 +25,8 @@ let a = 10;
 
 	  <h1  className={classes.title}>это B</h1>
 
-
-	    <div>{count}</div>
+ <div>{props.firstName + ' ' + props.secondName}</div>
+	    <p>{count}</p>
 	    <div>{count * a}</div>
 
 
@@ -40,6 +40,22 @@ let a = 10;
 	  	);
 }
 
+let mapStateToProps = (state) =>{
+	return{
+		firstName: state.test.firstName,
+		secondName: state.test.secondName
+
+	}
+}
 
 
-export default Counter;
+let mapDispatchToProps = (dispatch) =>{
+	return{
+	
+		
+	}
+}
+
+	 const CounterContainer = connect(mapStateToProps,mapDispatchToProps)(Counter);
+
+export default CounterContainer;

@@ -14,13 +14,15 @@ const Header = (props) => {
 	  return (
 	  <div>
 
-	  <h1  className={classes.title}>это Header</h1>
 		<ul className={classes.menu}>
           <li className={classes.menu_link}>
             <Link to=""> 🏠Home</Link>
           </li>
-          <li>
+          <li className={classes.menu_link}>
             <Link to="/game">Game</Link>
+          </li>
+           <li className={classes.menu_link}>
+            <Link to="/ReducerTestPageContainer">ReducerTestPageContainer</Link>
           </li>
         </ul>
 					

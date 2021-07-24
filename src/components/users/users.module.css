@@ -18,3 +18,14 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.users_component{
+    background-color: yellowgreen;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.user{
+  margin: 10px;
+  font-size: 26px;
+}

@@ -1,9 +1,10 @@
-import React from 'react';
+import  React from 'react';
 import Header from './components/header/Header';
 import Counter from './components/counter/Counter';
 import Color_Change from './components/color_change/Color_Change';
-import Users from './components/users/Users';
+import UsersContainer from './components/users/Users';
 import Life from './components/life/Life';
+import ReducerTestPageContainer from './components/reducerTestPage/ReducerTestPage';
 import Dimensions from './components/dimensions/Dimensions';
 import Dimensions_withHuck from './components/dimensions/Dimensions_withHuck';
 import Game from './components/game/Game';
@@ -14,6 +15,15 @@ import {
   Route,
   Link
 } from "react-router-dom";
+//import {store} from './store/redusers/testReducer.js';
+import store from './store/store.js';
+//import {StoreContext} from './context/StoreContext.js'
+import { Provider } from 'react-redux';
+
+
+
+console.log(store)
+//console.log(ReducerTestPageContainer)
 
 const users = [
     {
@@ -40,14 +50,16 @@ const users = [
 
 
 function App() {
+  //console.log(store)
   return (
+    <Provider store={store}>
        <Router>
          <div className={classes.app_container}>
          <Header />
           <Route exact path="/">
              <Counter interval ={1000} / >
              <Color_Change / >
-             <Users users={users} / >
+             <UsersContainer users={users} / >
              <Life / >
              <Dimensions / >
              <Dimensions_withHuck / >
@@ -56,9 +68,15 @@ function App() {
           <Route path="/game">
             <Game />
           </Route>
+
+
+           <Route path="/ReducerTestPageContainer">
+            <ReducerTestPageContainer  />
+          </Route>
            
         </div>
      </Router>
+     </Provider>
   );
 }
 
